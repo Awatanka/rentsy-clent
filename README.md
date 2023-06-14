@@ -1,3 +1,7 @@
+<video src="https://user-images.githubusercontent.com/97055104/214985341-217f7eb2-0bbf-46eb-a1c0-bfbea209bb4d.mp4">
+  </video></td><tr/> <tr><td width="40%" align="center"> <h4> Personal Project Rentsy </h4> <p> Tech Stack: React, Sass, Node.js, Express.js, Knex.js, MySQL, MUI, Bootstrap, Google Map API</p> 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
