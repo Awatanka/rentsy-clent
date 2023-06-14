@@ -1,5 +1,5 @@
-<video src="https://user-images.githubusercontent.com/97055104/214985341-217f7eb2-0bbf-46eb-a1c0-bfbea209bb4d.mp4">
-  </video></td><tr/> <tr><td width="40%" align="center"> <h4> Personal Project Rentsy </h4> <p> Tech Stack: React, Sass, Node.js, Express.js, Knex.js, MySQL, MUI, Bootstrap, Google Map API</p> 
+<video src="https://user-images.githubusercontent.com/97055104/216438347-de7f83de-3a0b-42fb-a66d-64169cd02152.mp4"> </video>
+<h4> Personal Project Rentsy </h4> <p> Tech Stack: React, Sass, Node.js, Express.js, Knex.js, MySQL, MUI, Bootstrap, Google Map API</p> 
 
 
 # Getting Started with Create React App
