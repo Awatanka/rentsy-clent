@@ -1,0 +1,100 @@
+.cardSectionHome,.cardSectionSimilar {
+    color: black;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.cardHeader {
+    font-size: .875rem;
+}
+
+
+.homePage {
+    position: fixed;
+    overflow-y: scroll;
+    top: 100px;
+    bottom: 0;
+}
+
+.homePage-card {
+    // width: 27%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 0 1.5rem;
+    border: 5px; 
+    font-size: 14px;
+    border-radius: .4125rem;
+  
+    &__holder {
+        width: 12.5rem;
+        border-radius: .3125rem;
+    }
+    
+    &:hover {transform: scale(1.05);
+    filter: none;
+}
+
+    &__property {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem;
+    }
+
+    &__bathroom,
+    &__bedroom {
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+    }
+
+    &__top {
+        padding: 0.5rem;
+        &-img {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 100%;
+            border-radius: .3125rem;
+        }
+    }
+
+    &__bottom {
+        &-address {
+            height: 3rem;
+            text-align: left;
+            padding: 0 3rem;
+        }
+
+        &-price {
+            background: #ffd500;
+            width: fit-content;
+            padding: 0.5rem;
+            border-radius: .3125rem;
+            border: 1px solid #ffd500;
+            font-weight: 700;
+        }
+
+        &-address {
+            text-align: center;
+        }
+
+        &-extra {
+            background: #f8f9fa;
+            border-top: 1px solid #ffd500;
+            display: flex;
+            height: 5rem;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+.homePage-icon__heart {
+    &:hover {
+        fill: #ffd500;
+
+        transform: scale(1.2);
+
+    }
+}

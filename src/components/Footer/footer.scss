@@ -1,0 +1,88 @@
+footer {
+    background-color: rgb(67, 67, 67);
+    justify-content: center;
+}
+
+.container {
+    max-width: 2500px;
+    margin: 0 1rem;
+}
+
+.col-md-3 .btn {
+    margin-bottom: 5px;
+    width: 9rem;
+    color: rgb(235, 230, 230);
+    background: rgba(248, 243, 243, 0.5);
+    font-size: 12px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    height: 3rem;
+    border-color: #ffffff;
+}
+
+.col-md-2 .btn {
+    margin-bottom: 15px;
+    width: 10rem;
+    color: rgb(235, 230, 230);
+    background: rgba(61, 61, 61, 0.5);
+    border-color: #ffffff;
+    font-size: 13px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    height: 3rem;
+
+
+&:hover {
+    background: #ffd500;
+    color: black;
+    border: .0625rem solid black;
+    font-weight: 600;
+}
+&:active {
+background: #ffd500;
+    color: black;
+}
+}
+
+.container-header {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.text-uppercase {
+    color: #ffffff;
+}
+
+.text-uppercase:hover {
+    color: #070707;
+}
+
+
+
+button:hover {
+    background: #070707;
+}
+
+.container_footer {
+    margin-top: 0;
+}
+
+footer h6 {
+    justify-content: center;
+}
+
+.container {
+    padding: 0;
+}
+
+.btn-secondary {
+    border-color: #ffffff;
+}
+
+.btn-footer {
+    background: #ffffff;
+}
+

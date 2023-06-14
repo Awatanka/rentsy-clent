@@ -1,0 +1,58 @@
+[
+  {
+    "TYPE": "Break Residential",
+    "HUNDRED_BLOCK": "10XX BARCLAY ST",
+    "NEIGHBOURHOOD": "West End",
+    "Latitude": 49.284419,
+    "Longitude": -123.128287
+  },
+  {
+    "TYPE": "Break Residential",
+    "HUNDRED_BLOCK": "10XX BEACH AVE",
+    "NEIGHBOURHOOD": "West End",
+    "Latitude": 49.275686,
+    "Longitude": -123.135212
+  },
+  {
+    "TYPE": "Break Residential",
+    "HUNDRED_BLOCK": "10XX DOUGLAS CRES",
+    "NEIGHBOURHOOD": "Shaughnessy",
+    "Latitude": 49.25454,
+    "Longitude": -123.12847
+  },
+  {
+    "TYPE": "Break Residential",
+    "HUNDRED_BLOCK": "10XX E 14TH AVE",
+    "NEIGHBOURHOOD": "Mount Pleasant",
+    "Latitude": 49.25724,
+    "Longitude": -123.04042
+  },
+  {
+    "TYPE": "Break Residential",
+    "HUNDRED_BLOCK": "10XX E 52ND AVE",
+    "NEIGHBOURHOOD": "Sunset",
+    "Latitude": 49.22275,
+    "Longitude": -123.09447
+  },
+  {
+    "TYPE": "Break Residential",
+    "HUNDRED_BLOCK": "10XX EXPO BLVD",
+    "NEIGHBOURHOOD": "Central Business District",
+    "Latitude": 49.27781,
+    "Longitude": -123.11114
+  },
+  {
+    "TYPE": "Break Residential",
+    "HUNDRED_BLOCK": "10XX GRANVILLE ST",
+    "NEIGHBOURHOOD": "Central Business District",
+    "Latitude": 49.27666,
+    "Longitude": -123.12697
+  },
+  {
+    "TYPE": "Break Residential",
+    "HUNDRED_BLOCK": "10XX HARWOOD ST",
+    "NEIGHBOURHOOD": "West End",
+    "Latitude": 49.27998,
+    "Longitude": -123.13485
+  }
+]

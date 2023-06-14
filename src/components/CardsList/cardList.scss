@@ -1,0 +1,90 @@
+.cardList {
+    position: fixed;
+    overflow-y: scroll;
+    top: 120px;
+    height: 100vh;
+    margin: auto 0;
+    
+}
+
+.cardList-card {
+    // width: 27%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: 2rem;
+    border: 5px;
+    width: 70%;
+    font-size: 14px;
+    border-radius: .3125rem;
+
+&:hover {
+    transform: scale(1.05);
+}
+
+    &__property {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__bathroom,
+    &__bedroom {
+        display: flex;
+        flex-direction: row;
+        padding: 1rem;
+    }
+
+    &__top {
+        padding: 0.5rem;
+
+
+        &-img {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 100%;
+            border-radius: .3125rem;
+       
+        }
+    }
+
+    &__bottom {
+
+        padding: 0.5rem;
+
+        &-price {
+            background: #ffd500;
+            width: fit-content;
+            padding: 0.5rem;
+            border-radius: .3125rem;
+            border: 2px solid #ffd500;
+            font-weight: 700;
+        }
+
+        &-address {
+            text-align: center;
+        }
+
+        &-extra {
+            background: #f8f9fa;
+            // border-top: 1px solid #ced4da;
+            border-top: 2px solid #ffd500;
+            display: flex;
+            height: 4rem;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+
+.formControl {
+    width: 120px;
+    height: 4.375rem;
+    margin: 16px;
+}
+
+.heart {
+    position: absolute;
+    top: 45px;
+    left: 14rem;
+}

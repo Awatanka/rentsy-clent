@@ -1,0 +1,20 @@
+// .carousel, .slider {
+//     width: 31.25rem;
+// }
+
+
+.slider {
+    margin: 2rem 5rem;
+
+&-header {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    &__title{
+    margin: 0;
+    padding: 0;
+    }
+}
+}

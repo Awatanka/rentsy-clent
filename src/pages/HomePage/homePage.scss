@@ -1,0 +1,50 @@
+.main{
+  &-homePage {
+    &__hero
+    
+    {
+        width: 100vw;
+    }
+}  
+}
+
+.button {
+    background: gray;
+    
+}
+
+.cardNew {
+
+&-content {
+    display: flex;
+    flex-direction: row;
+    margin: 0 1rem;
+   
+}
+}
+
+
+ .cardNew, .cardHouse{
+    margin: 1.5rem 0;
+    &-title {
+        margin: 2rem 4rem 0;
+        &__header {
+            font-weight: 700;
+            text-decoration: underline;
+        }
+        &__more {
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-align: right;
+        }
+    }
+    &-content {
+        display: flex;
+        flex-direction: row;
+        margin: 1rem;
+
+    }
+}
+
+
+
