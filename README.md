@@ -1,5 +1,4 @@
-<video src="https://user-images.githubusercontent.com/97055104/216438347-de7f83de-3a0b-42fb-a66d-64169cd02152.mp4"> </video>
-<h4> Personal Project Rentsy </h4> <p> Tech Stack: React, Sass, Node.js, Express.js, Knex.js, MySQL, MUI, Bootstrap, Google Map API</p> 
+<tr><td width="40%" align="center"><video src="https://user-images.githubusercontent.com/97055104/216438347-de7f83de-3a0b-42fb-a66d-64169cd02152.mp4"> </video></td>
 
 
 # Getting Started with Create React App
