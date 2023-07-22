@@ -2,7 +2,11 @@ import { Typography, Container, ListItem, List } from "@mui/material";
 
 export default function HomePageSubsection() {
   return (
-    <Container sx={{ mt: 6 }}>
+    <Container
+      sx={{
+        mt: 6,
+      }}
+    >
       <Typography variant="h5">Why Rent with Us?</Typography>
       <List>
         <ListItem>

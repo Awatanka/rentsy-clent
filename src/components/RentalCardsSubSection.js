@@ -6,7 +6,7 @@ import CustomCard from "./CustomCard";
 
 export default function RentalCardsSection({ title, description, items }) {
   return (
-    <Box sx={{ margin: "20px 0" }}>
+    <Box sx={{ margin: "40px 0" }}>
       {items && (
         <>
           <Grid container spacing={2}>
