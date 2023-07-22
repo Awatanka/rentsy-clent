@@ -1,7 +1,7 @@
 import CardList from "../../components/CardsList/CardList";
 import Map from "../../components/Map/Map";
 import "../MapPage/mapPage.scss";
-import Footer from "../../components/Footer/Footer";
+import Footer from "../../components/Footer";
 
 export default function MapPage({ items }) {
   return (
@@ -15,7 +15,7 @@ export default function MapPage({ items }) {
           <CardList />
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

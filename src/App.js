@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Header/Header";
+import Header from "./components/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import CardDetails from "./pages/CardDetails/CardDetails";
 import Account from "./pages/Account/Account";
@@ -16,7 +16,7 @@ function App() {
   useEffect(() => {
     const options = {
       method: "GET",
-      url: "https://zillow-com1.p.rapidapi.com/propertyExtendedSearch",
+      url: "https://zillow-com1.p.rapidapi.com/property",
       params: {
         location: "Vancouver, CA",
         page: "1",

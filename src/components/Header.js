@@ -1,21 +1,23 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
+import Menu from "@mui/material/Menu";
 import Badge from "@mui/material/Badge";
 import MailIcon from "@mui/icons-material/Mail";
 import { Link } from "react-router-dom";
-
-import Logo from "../../assets/images/Logo.png";
-import AvatarIcon from "../../assets/images/4.jpg";
+import MapsHomeWorkIcon from "@mui/icons-material/MapsHomeWork";
+import ContactsIcon from "@mui/icons-material/Contacts";
+import HelpIcon from "@mui/icons-material/Help";
+import Box from "@mui/material/Box";
+import MenuItem from "@mui/material/MenuItem";
+import Typography from "@mui/material/Typography";
+import Logo from "../assets/images/Logo.png";
+import AvatarIcon from "../assets/images/4.jpg";
 
 const settings = ["Profile", "Account"];
 
@@ -46,27 +48,13 @@ function Header() {
       <Container maxWidth="xl" sx={{ background: "white", color: "#10002B" }}>
         <Toolbar disableGutters>
           <Link to={"/"}>
-            <img src={Logo} className="navBar-logo" alt="Logo" />
+            <img
+              src={Logo}
+              className="navBar-logo"
+              alt="Logo"
+              style={{ width: "200px" }}
+            />
           </Link>
-
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "flex", md: "none" },
-            }}
-          >
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            //TODO:{/* Add the menu content here */}
-          </Box>
 
           <Box
             sx={{
@@ -79,21 +67,66 @@ function Header() {
               },
             }}
           >
-            <MenuItem
-              onClick={handleCloseNavMenu}
-              component={Link}
+            <Link
               to={"/Rent"}
-              sx={{
-                my: 2,
-                color: "#3f3e3e",
-                display: "block",
-                textDecoration: "none",
-                fontWeight: "600",
-              }}
+              className="header-link"
+              style={{ textDecoration: "none" }}
             >
-              RENT
-            </MenuItem>
-            //TODO: {/* Add other menu items here later */}
+              <MenuItem
+                onClick={handleCloseNavMenu}
+                sx={{
+                  my: 2,
+                  color: "#3f3e3e",
+                  display: "flex",
+                  alignItems: "center",
+                  textDecoration: "none",
+                  fontWeight: "600",
+                }}
+              >
+                <MapsHomeWorkIcon sx={{ mr: 1 }} />
+                Rent
+              </MenuItem>
+            </Link>
+            <Link
+              to={"/Guide"}
+              className="header-link"
+              style={{ textDecoration: "none" }}
+            >
+              <MenuItem
+                onClick={handleCloseNavMenu}
+                sx={{
+                  my: 2,
+                  color: "#3f3e3e",
+                  display: "flex",
+                  alignItems: "center",
+                  textDecoration: "none",
+                  fontWeight: "600",
+                }}
+              >
+                <HelpIcon sx={{ mr: 1 }} />
+                Guide
+              </MenuItem>
+            </Link>
+            <Link
+              to={"/Contact"}
+              className="header-link"
+              style={{ textDecoration: "none" }}
+            >
+              <MenuItem
+                onClick={handleCloseNavMenu}
+                sx={{
+                  my: 2,
+                  color: "#3f3e3e",
+                  display: "flex",
+                  alignItems: "center",
+                  textDecoration: "none",
+                  fontWeight: "600",
+                }}
+              >
+                <ContactsIcon sx={{ mr: 1 }} />
+                Contact Us
+              </MenuItem>
+            </Link>
           </Box>
 
           <Box sx={{ flexGrow: 1 }} />
@@ -112,11 +145,14 @@ function Header() {
                 <MailIcon />
               </Badge>
             </IconButton>
-            //TODO:{/* Add other icon buttons here later*/}
           </Box>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            //TODO: /* Add mobile icon buttons here later*/
+            <IconButton size="large" color="inherit">
+              <Badge badgeContent={4} color="error">
+                <MailIcon />
+              </Badge>
+            </IconButton>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -158,7 +194,5 @@ function Header() {
     </AppBar>
   );
 }
-
-Header.propTypes = {};
 
 export default Header;

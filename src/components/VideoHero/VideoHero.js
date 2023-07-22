@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import "../VideoHero/videoHero.scss";
-import SearchBar from "../SearchBar/SearchBar";
+import SearchBar from "../SearchBar";
 import { Link } from "react-router-dom";
 
 const VideoHero = () => {

@@ -16,13 +16,13 @@ export default function RentalCards({ items }) {
       item.imgSrc
     );
   };
+  console.log(items);
 
-  return (
+  sreturn(
     <>
       {items && (
         <>
           <div className="cardNew-title">
-            {" "}
             <h4 className="cardNew-title__header"> Latest in Vancouver </h4>
             <p className="cardNew-title__content">
               If you aren’t familiar with Vancouver and it’s many great
@@ -38,9 +38,9 @@ export default function RentalCards({ items }) {
                 to={"/card"}
                 style={{ textDecoration: "none", color: "black" }}
               >
-                View more <ReadMoreIcon />{" "}
+                View more <ReadMoreIcon />
               </Link>
-            </p>{" "}
+            </p>
           </div>
           <section className="cardSectionHome">
             {items

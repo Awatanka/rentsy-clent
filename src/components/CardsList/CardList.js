@@ -1,7 +1,7 @@
 import "./cardList.scss";
 import { Link } from "react-router-dom";
 
-import data from "./item.json";
+import data from "../../data/item.json";
 import { useEffect, useState } from "react";
 import BedOutlinedIcon from "@mui/icons-material/BedOutlined";
 import BathtubOutlinedIcon from "@mui/icons-material/BathtubOutlined";
