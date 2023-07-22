@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
@@ -51,7 +50,9 @@ function FooterButton(props) {
         target={target}
         rel="noopener noreferrer"
         underline="none"
-        style={{ textDecoration: "none" }}
+        style={{
+          textDecoration: "none",
+        }}
       >
         <Button
           variant="outlined"

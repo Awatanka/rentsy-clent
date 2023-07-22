@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage/HomePage";
@@ -8,37 +8,42 @@ import EditProfile from "./pages/EditProfile/EditProfile";
 import MapPage from "./pages/MapPage/MapPage";
 import Map from "./components/Map/Map";
 import Favorite from "./pages/Favourite/Favourite";
-import axios from "axios";
+
+// import axios from "axios";
+// import { useEffect } from "react";
 
 function App() {
+  // eslint-disable-next-line
   const [items, setItems] = useState([]);
 
-  useEffect(() => {
-    const options = {
-      method: "GET",
-      url: "https://zillow-com1.p.rapidapi.com/property",
-      params: {
-        location: "Vancouver, CA",
-        page: "1",
-        status_type: "ForRent",
-      },
-      headers: {
-        "X-RapidAPI-Key": `${process.env.REACT_APP_ZILLOW_API_KEY}`,
-        "X-RapidAPI-Host": "zillow-com1.p.rapidapi.com",
-      },
-    };
+  // useEffect(() => {
+  //   const options = {
+  //     method: "GET",
+  //     url: "https://zillow-com1.p.rapidapi.com/property",
+  //     params: {
+  //       location: "Vancouver, CA",
+  //       page: "1",
+  //       status_type: "ForRent",
+  //     },
+  //     headers: {
+  //       "X-RapidAPI-Key": `${process.env.REACT_APP_ZILLOW_API_KEY}`,
+  //       "X-RapidAPI-Host": "zillow-com1.p.rapidapi.com",
+  //     },
+  //   };
+  //   axios
+  //     .request(options)
+  //     .then(function (response) {
+  //       console.log(response.data);
+  //       setItems(response.data.props);
+  //     })
+  //     .catch(function (error) {
+  //       console.error(error);
+  //     });
+  // }, []);
 
-    axios
-      .request(options)
-      .then(function (response) {
-        console.log(response.data);
-        setItems(response.data.props);
-        console.log(items);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   console.log(items); // log the updated items state
+  // }, [items]);
 
   return (
     <>

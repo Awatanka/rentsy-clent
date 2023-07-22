@@ -20,7 +20,7 @@ export default function RentalCardsSection({ title, description, items }) {
                 to={"/card"}
                 style={{
                   textDecoration: "none",
-                  color: "gray",
+                  color: "#806B80",
                   display: "flex",
                   justifyContent: "right",
                   alignItems: "center",
