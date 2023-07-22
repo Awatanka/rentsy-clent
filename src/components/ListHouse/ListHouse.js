@@ -1,9 +1,7 @@
+import "./listHouse.scss";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { Card, Typography } from "@mui/material";
 import data from "./house.json";
-import "../ListHouse/listHouse.scss";
-
+import { useEffect, useState } from "react";
 import BedOutlinedIcon from "@mui/icons-material/BedOutlined";
 import BathtubOutlinedIcon from "@mui/icons-material/BathtubOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -15,20 +13,25 @@ export default function ListHouse() {
     setItems(data.props);
   }, []);
 
+  const checkItem = (item) => {
+    return item.bedrooms && item.bathrooms && item.price && item.address;
+  };
+
   return (
     <>
       {items && (
         <section className="cardSectionHome">
+          {" "}
           {items
             .filter((item) => item.propertyType === "SINGLE_FAMILY")
             .slice(14, 18)
             .map((item) => (
-              <div className="sidebarHome-card" key={item.zpid}>
+              <div className="homePage-card" key={item.zipid}>
                 <Link
                   to={`/card/${item.zpid}`}
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  <Card className="homePage-card__holder">
+                  <card className="homePage-card__holder">
                     <div className="homePage-card__top">
                       <img
                         className="homePage-card__top-img"
@@ -54,44 +57,41 @@ export default function ListHouse() {
                     </div>
                     <div className="homePage-card__bottom">
                       <div className="homePage-card__property">
-                        <Typography variant="subtitle2" component="h6">
+                        {" "}
+                        <h6 className="homePage-card__bottom-header">
                           {item.propertyType}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          className="homePage-card__bottom-price"
-                        >
+                        </h6>
+                        <p className="homePage-card__bottom-price">
+                          {" "}
                           {item.price} {item.currency}
-                        </Typography>
+                        </p>
                       </div>
-                      <Typography
-                        variant="body2"
-                        className="homePage-card__bottom-address"
-                      >
+
+                      <p className="homePage-card__bottom-address">
+                        {" "}
                         {item.address}
-                      </Typography>
+                      </p>
+
                       <div className="homePage-card__bottom-extra">
                         <div className="homePage-card__bedroom">
+                          {" "}
                           <BedOutlinedIcon style={{ fill: "#8e9aaf" }} />
-                          <Typography variant="body2">
-                            {item.bedrooms} Bed
-                          </Typography>
+                          <p> {item.bedrooms} Bed</p>
                         </div>
                         <div className="homePage-card__bathroom">
+                          {" "}
                           <BathtubOutlinedIcon
                             style={{ fill: "#8e9aaf" }}
                             className="homePage-card__bathroom-icon"
                           />
-                          <Typography
-                            variant="body2"
-                            className="homePage-card__bathroom-text"
-                          >
+                          <p className="homePage-card__bathroom-text">
+                            {" "}
                             {item.bathrooms} Bath
-                          </Typography>
+                          </p>
                         </div>
                       </div>
                     </div>
-                  </Card>
+                  </card>
                 </Link>
               </div>
             ))}

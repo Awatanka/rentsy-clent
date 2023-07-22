@@ -28,6 +28,7 @@ export default function CardList() {
               {" "}
               <card className="cardList-card__holder">
                 <div className="cardList-card__top">
+                  {/* <FavoriteBorderIcon className="heart" color="white" /> */}
                   <img
                     className="cardList-card__top-img"
                     src={item.imgSrc}
@@ -36,7 +37,6 @@ export default function CardList() {
                 </div>
                 <div className="cardList-card__bottom">
                   <div className="cardList-card__property">
-                    {" "}
                     <h6 className="cardList-card__bottom-header">
                       {item.propertyType}
                     </h6>

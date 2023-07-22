@@ -1,18 +1,17 @@
-import { Link } from "react-router-dom";
-import { styled } from "@mui/material/styles";
-import Button from "@mui/material/Button";
+import "./sideBar.scss";
+import GoogleMapReact from "google-map-react";
 import BedOutlinedIcon from "@mui/icons-material/BedOutlined";
 import BathtubOutlinedIcon from "@mui/icons-material/BathtubOutlined";
+import { Link } from "react-router-dom";
+import useStyles from "./styles";
+import HomeIcon from "@mui/icons-material/Home";
+import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import GoogleMapReact from "google-map-react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import HomeIcon from "@mui/icons-material/Home";
 
-// import "./sideBar.scss";
-import useStyles from "./styles";
-
-const SideBar = ({ items }) => {
+export default function SideBar({ items }) {
   const [item, setItem] = useState([]);
   const classes = useStyles();
   const coordinates = { lat: 49.246292, lng: -123.116226 };
@@ -41,7 +40,7 @@ const SideBar = ({ items }) => {
       '"Helvetica Neue"',
       "Arial",
       "sans-serif",
-      "Apple Color Emoji",
+      '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(","),
@@ -82,6 +81,7 @@ const SideBar = ({ items }) => {
           lat: item.latitude,
           lng: item.longitude,
         },
+        // label: item.address,
       });
       place.setMap(map);
       return place;
@@ -107,58 +107,95 @@ const SideBar = ({ items }) => {
             }}
           ></GoogleMapReact>
         </div>
-        <div className="sidebar-button-container">
-          <Link to={"/mapPage"} className="sidebar-link">
-            <BootstrapButton variant="contained" className="sidebar-button">
-              Explore Neighborhood <HomeIcon className="sidebar-button-icon" />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {" "}
+          <Link style={{ textDecoration: "none" }} to={"/mapPage"}>
+            <BootstrapButton
+              variant="contained"
+              className="slider-header__button"
+              style={{
+                backgroundColor: "#3f3e3e",
+                color: "white",
+                animation: "glowing 5000ms infinite",
+              }}
+            >
+              Explore Neighborhood <HomeIcon style={{ marginLeft: "0.2rem" }} />
             </BootstrapButton>
           </Link>
         </div>
         <div>
+          {" "}
           {items &&
             items
               .filter((item) => checkItem(item))
               .slice(2, 16)
               .map((item) => (
                 <div className="sidebar-card" key={item.zpid}>
-                  <Link to={`/card/${item.zpid}`} className="sidebar-card-link">
-                    <card className="sidebar-card-holder">
-                      <div className="sidebar-card-top">
+                  <Link
+                    to={`/card/${item.zpid}`}
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    <card className="homePage-card__holder">
+                      <div className="homePage-card__top">
                         <img
-                          className="sidebar-card-top-img"
+                          className="homePage-card__top-img"
                           src={item.imgSrc}
                           alt={item.name}
                         />
                       </div>
-                      <div className="sidebar-icon">
-                        <div className="sidebar-icon-content">
-                          Living area: {item.livingArea} sqft
-                          <FavoriteIcon className="sidebar-icon-heart" />
-                        </div>
+                      <div
+                        className="homePage-icon"
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          margin: "0 0.5rem",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        Living area: {item.livingArea} sqft
+                        <FavoriteIcon
+                          style={{ color: "grey" }}
+                          className="homePage-icon__heart"
+                        />
                       </div>
-                      <div className="sidebar-card-bottom">
-                        <div className="sidebar-card-property">
-                          <h6 className="sidebar-card-bottom-header">
+                      <div className="homePage-card__bottom">
+                        <div className="homePage-card__property">
+                          {" "}
+                          <h6 className="homePage-card__bottom-header">
                             {item.propertyType}
                           </h6>
-                          <p className="sidebar-card-bottom-price">
+                          <p className="homePage-card__bottom-price">
+                            {" "}
                             {item.price} {item.currency}
                           </p>
                         </div>
-                        <p className="sidebar-card-bottom-address">
+
+                        <p className="homePage-card__bottom-address">
+                          {" "}
                           {item.address}
                         </p>
-                        <div className="sidebar-card-bottom-extra">
-                          <div className="sidebar-card-bedroom">
+
+                        <div className="homePage-card__bottom-extra">
+                          <div className="homePage-card__bedroom">
+                            {" "}
                             <BedOutlinedIcon style={{ fill: "#8e9aaf" }} />
-                            <p>{item.bedrooms} Bed</p>
+                            <p> {item.bedrooms} Bed</p>
                           </div>
-                          <div className="sidebar-card-bathroom">
+                          <div className="homePage-card__bathroom">
+                            {" "}
                             <BathtubOutlinedIcon
                               style={{ fill: "#8e9aaf" }}
-                              className="sidebar-card-bathroom-icon"
+                              className="homePage-card__bathroom-icon"
                             />
-                            <p className="sidebar-card-bathroom-text">
+                            <p className="homePage-card__bathroom-text">
+                              {" "}
                               {item.bathrooms} Bath
                             </p>
                           </div>
@@ -172,6 +209,4 @@ const SideBar = ({ items }) => {
       </aside>
     </>
   );
-};
-
-export default SideBar;
+}

@@ -3,7 +3,7 @@ import useStyles from "./styles";
 import dogParksJson from "./dog-off-leash-parks.json";
 import crimesJson from "./crimeData.json";
 import schoolsJson from "./schools.json";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import PetsIcon from "@mui/icons-material/Pets";
 import PrivacyTipIcon from "@mui/icons-material/PrivacyTip";
 import SchoolIcon from "@mui/icons-material/School";
@@ -24,18 +24,6 @@ export default function Map({ items }) {
 
   const [schools, setSchools] = useState([]);
   const [showSchools, setShowSchools] = useState(false);
-
-  useEffect(() => {
-    hideDogParks();
-  }, [showDogParks]);
-
-  useEffect(() => {
-    hideCrimes();
-  }, [showCrimes]);
-
-  useEffect(() => {
-    hideSchools();
-  }, [showSchools]);
 
   const onMarkerClick = (event) => {
     event.preventDefault();

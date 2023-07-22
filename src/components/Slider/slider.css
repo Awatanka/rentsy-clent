@@ -1,0 +1,14 @@
+.slider {
+  margin: 2rem 5rem;
+}
+.slider-header {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+.slider-header__title {
+  margin: 0;
+  padding: 0;
+}/*# sourceMappingURL=slider.css.map */
