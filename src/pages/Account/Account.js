@@ -63,6 +63,7 @@ export default function Account() {
                     width="100px"
                     height="100px"
                     src={Avatar}
+                    alt="avatar"
                   />
                   <div className="formFirst__bottom">
                     <Form.Group className="mb-3" controlId="formBasicEmail">

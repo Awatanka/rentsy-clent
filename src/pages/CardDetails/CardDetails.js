@@ -1,71 +1,65 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Card, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import SideBar from "../../components/SideBar/SideBar";
-import Slider from "../../components/Slider/Slider";
+import CustomSlider from "../../components/Slider/CustomSlider";
+
+const cacheItem = {};
 
 function CardDetails({ items }) {
   const [item, setItem] = useState(null);
-
   const params = useParams();
-  const cacheItem = useRef({});
-
   const itemId = params.cardId;
 
-  const options = {
-    method: "GET",
-    url: "https://zillow-com1.p.rapidapi.com/property",
-    params: { zpid: `${itemId}` },
-    headers: {
-      "X-RapidAPI-Key": "da86316bdcmsh9b607f3eb67c004p10dbbfjsnd18353baa41d",
-      "X-RapidAPI-Host": "zillow-com1.p.rapidapi.com",
-    },
-  };
-
-  // const options = {
-  //   method: "GET",
-  //   url: "https://zillow56.p.rapidapi.com/property",
-  //   params: { zpid: `${itemId}` },
-  //   headers: {
-  //     "X-RapidAPI-Key": "da86316bdcmsh9b607f3eb67c004p10dbbfjsnd18353baa41d",
-  //     "X-RapidAPI-Host": "zillow56.p.rapidapi.com",
-  //   },
-  // };
+  const options = useMemo(
+    () => ({
+      method: "GET",
+      url: "https://zillow-com1.p.rapidapi.com/property",
+      params: { zpid: `${itemId}` },
+      headers: {
+        "X-RapidAPI-Key": "da86316bdcmsh9b607f3eb67c004p10dbbfjsnd18353baa41d",
+        "X-RapidAPI-Host": "zillow-com1.p.rapidapi.com",
+      },
+    }),
+    [itemId]
+  );
 
   useEffect(() => {
-    if (cacheItem.current[itemId]) {
-      console.log("useg from cache");
-      setItem(cacheItem.current[itemId]);
+    if (cacheItem[itemId]) {
+      console.log("use from cache");
+      setItem(cacheItem[itemId]);
     } else {
       axios
         .request(options)
         .then(function (response) {
           setItem(response.data);
-          cacheItem.current[itemId] = response.data;
+          cacheItem[itemId] = response.data;
           console.log(item);
         })
         .catch(function (error) {
           console.error(error);
         });
     }
-  }, [params]);
+  }, [item, itemId, options]);
 
   return (
     <>
-      {item && (
-        <section className="cardDetail">
-          <section className="cardDetail__left">
-            <Typography variant="h6" className="cardDetail__left-title">
-              {item.title}
-            </Typography>
-            <Slider element={item} />
+      {item &&
+        itemId &&
+        options(
+          <section className="cardDetail">
+            <section className="cardDetail__left">
+              <Typography variant="h6" className="cardDetail__left-title">
+                {item.title}
+              </Typography>
+              <CustomSlider element={item} />
+            </section>
+            <section className="cardDetail__right">
+              <SideBar items={items} />
+            </section>
           </section>
-          <section className="cardDetail__right">
-            <SideBar items={items} />
-          </section>
-        </section>
-      )}
+        )}
     </>
   );
 }

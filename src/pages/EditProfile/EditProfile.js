@@ -58,6 +58,7 @@ export default function EditProfile() {
                     width="100px"
                     height="100px"
                     src={Avatar}
+                    alt="avatar"
                   />
                   <div className="formFirst__bottom">
                     <Form.Group className="mb-2" controlId="formBasicEmail">

@@ -16,6 +16,8 @@ function App() {
   // eslint-disable-next-line
   const [items, setItems] = useState([]);
 
+  console.log(items);
+
   // useEffect(() => {
   //   const options = {
   //     method: "GET",

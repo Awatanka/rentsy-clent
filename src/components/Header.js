@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
@@ -18,30 +17,25 @@ import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
 import Logo from "../assets/images/Logo.png";
 import AvatarIcon from "../assets/images/4.jpg";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const settings = ["Profile", "Account"];
 
 function Header() {
-  const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
   };
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
 
-  const menuId = "primary-search-account-menu";
+  const handleToggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
   return (
     <AppBar position="sticky" className="navBar">
@@ -73,7 +67,6 @@ function Header() {
               style={{ textDecoration: "none" }}
             >
               <MenuItem
-                onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
                   color: "#3f3e3e",
@@ -93,7 +86,6 @@ function Header() {
               style={{ textDecoration: "none" }}
             >
               <MenuItem
-                onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
                   color: "#3f3e3e",
@@ -113,7 +105,6 @@ function Header() {
               style={{ textDecoration: "none" }}
             >
               <MenuItem
-                onClick={handleCloseNavMenu}
                 sx={{
                   my: 2,
                   color: "#3f3e3e",
@@ -147,13 +138,46 @@ function Header() {
             </IconButton>
           </Box>
 
+          {/* Mobile menu button */}
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
-            <IconButton size="large" color="inherit">
-              <Badge badgeContent={4} color="error">
-                <MailIcon />
-              </Badge>
+            <IconButton
+              size="large"
+              color="inherit"
+              onClick={handleToggleMobileMenu}
+            >
+              <MenuIcon />
             </IconButton>
           </Box>
+
+          {/* Mobile menu */}
+          {mobileMenuOpen && (
+            <Box sx={{ position: "absolute", top: "100%", right: 0 }}>
+              <MenuItem onClick={handleToggleMobileMenu}>
+                <Link
+                  to={"/Rent"}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  Rent
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleToggleMobileMenu}>
+                <Link
+                  to={"/Guide"}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  Guide
+                </Link>
+              </MenuItem>
+              <MenuItem onClick={handleToggleMobileMenu}>
+                <Link
+                  to={"/Contact"}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  Contact Us
+                </Link>
+              </MenuItem>
+            </Box>
+          )}
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
