@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import BedOutlinedIcon from "@mui/icons-material/BedOutlined";
 import BathtubOutlinedIcon from "@mui/icons-material/BathtubOutlined";
 
-export default function CardList() {
+export default function CardListAside() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {

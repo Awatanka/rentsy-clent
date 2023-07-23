@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import CardDetails from "./pages/CardDetails/CardDetails";
 import Account from "./pages/Account/Account";
 import EditProfile from "./pages/EditProfile/EditProfile";
-import MapPage from "./pages/MapPage/MapPage";
+import MapPage from "./pages/MapPage";
 import Map from "./components/Map/Map";
 import Favorite from "./pages/Favourite/Favourite";
 

@@ -1,8 +1,8 @@
 import GoogleMapReact from "google-map-react";
 import useStyles from "./styles";
-import dogParksJson from "./dog-off-leash-parks.json";
-import crimesJson from "./crimeData.json";
-import schoolsJson from "./schools.json";
+import dogParksJson from "../../data/dog-off-leash-parks.json";
+import crimesJson from "../../data/crimeData.json";
+import schoolsJson from "../../data/schools.json";
 import { useState } from "react";
 import PetsIcon from "@mui/icons-material/Pets";
 import PrivacyTipIcon from "@mui/icons-material/PrivacyTip";
@@ -14,7 +14,7 @@ import * as ReactDOMServer from "react-dom/server";
 export default function Map({ items }) {
   const classes = useStyles();
   const coordinates = { lat: 49.246292, lng: -123.116226 };
-
+  // eslint-disable-next-line
   const [coor, setCoor] = useState(coordinates);
   const [dogParks, setDogParks] = useState([]);
   const [showDogParks, setShowDogParks] = useState(false);
@@ -25,10 +25,11 @@ export default function Map({ items }) {
   const [schools, setSchools] = useState([]);
   const [showSchools, setShowSchools] = useState(false);
 
-  const onMarkerClick = (event) => {
-    event.preventDefault();
-    console.log("event");
-  };
+  // eslint-disable-next-line
+  // const onMarkerClick = (event) => {
+  //   event.preventDefault();
+  //   console.log("event");
+  // };
 
   //***************  appartmens ************************/
 
@@ -170,43 +171,80 @@ export default function Map({ items }) {
     );
   };
 
+  const CustomButton = ({ label, icon, onClick }) => (
+    <button
+      onClick={onClick}
+      style={{
+        fontSize: "1rem",
+        width: "11rem",
+        height: "3.125rem",
+        padding: "6px 12px",
+        border: "1px solid",
+        lineHeight: "1.5",
+        fontWeight: 600,
+        background: "#ffd500",
+        borderColor: "grey",
+        borderRadius: "5px",
+        margin: "0 2rem",
+        boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+        transition: "background 0.3s, transform 0.3s",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        "&:hover": {
+          background: "#ffd500",
+          transform: "scale(1.05)",
+        },
+      }}
+    >
+      {label} {icon}
+    </button>
+  );
+
   return (
     <>
-      <div className="mapFilter">
+      <div
+        style={{
+          display: "flex",
+          padding: "1rem",
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+        }}
+      >
         <Filter />
-        <div className="mapFilter__buttons">
-          <button
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            alignItems: "center",
+          }}
+        >
+          <CustomButton
+            label="Dog off-leash"
+            icon={<PetsIcon />}
             onClick={() => {
               setShowDogParks((state) => !state);
               hideDogParks();
             }}
-            className="button-dog"
-          >
-            {" "}
-            Dog off-leash <PetsIcon />
-          </button>
-          <button
+          />
+          <CustomButton
+            label="Crimes"
+            icon={<PrivacyTipIcon />}
             onClick={() => {
               setShowCrimes((state) => !state);
               hideCrimes();
             }}
-            className="button-crime"
-          >
-            {" "}
-            Crimes
-            <PrivacyTipIcon />
-          </button>
-          <button
-            className="button-school"
+          />
+          <CustomButton
+            label="Schools"
+            icon={<SchoolIcon />}
             onClick={() => {
               setShowSchools((state) => !state);
               hideSchools();
             }}
-          >
-            {" "}
-            Schools
-            <SchoolIcon />
-          </button>
+          />
         </div>
       </div>
 

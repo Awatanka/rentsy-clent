@@ -31,8 +31,9 @@ const CustomCardMedia = styled(CardMedia)({
   backgroundSize: "cover",
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center center",
-  width: "100%",
+  width: "94%",
   borderRadius: ".3125rem",
+  margin: "10px 10px",
 });
 
 const PriceTag = styled(Typography)(() => ({
