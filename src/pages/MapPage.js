@@ -27,7 +27,6 @@ export default function MapPage({ items }) {
         <div style={mapStyle}>
           <Map items={items} />
         </div>
-
         <div style={sideStyle}>
           <CardListAside />
         </div>

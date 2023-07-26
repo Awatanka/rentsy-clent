@@ -19,27 +19,7 @@
         "country": "CAN",
         "currency": "CAD",
         "lotAreaUnit": null,
-        "hasImage": true,
-        "images": [
-            "https://photos.zillowstatic.com/fp/c5cfc2b0f4ec4d2189d64404a07dcda0-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/1fbb6f18fc7500e9fcda09772bbb555b-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/4daee127cc5cfc835f2ce5d2568e87dc-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/79c3f0d9943eac8a280f6e2c00e7c046-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/0a21d0f41f0f51ebe1a18abaeb9796ff-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/52de00ff86db3213497a486bf8dfe119-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/d4a27aac3b8b06fee09710cd339fe078-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/4e832af2076b63398fd2f4ea3532c551-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/c02864afa9fb9ab0c9016a45dbf39743-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/26a0baa9e9fec5c406954f1bcaa00c7e-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/4b3a72a59fa93a02f3932c8ad8de10f3-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/87a13a7db93cc9a1078c3f9e482b224b-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/4b66b9a8d8f8c7663ac8cab6daae971f-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/b19cc53b42dc1b36b4a9d050f57394d2-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/17b285482cca5dd570dad9031a39b9e7-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/ee37fc41f1449dac57e329a6057f8698-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/5000ba95fa16e283f43f959b0279f438-cc_ft_1536.jpg",
-            "https://photos.zillowstatic.com/fp/07a1ca42660e21eaa85a5e1f7d3be0cb-cc_ft_1536.jpg"
-        ]
+        "hasImage": true
     },
     {
         "dateSold": null,

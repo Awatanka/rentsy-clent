@@ -6,89 +6,52 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import Slider from "@mui/material/Slider";
 
-export default function CustomSlider({ element }) {
+export default function CustomSlider({ items }) {
   const [index, setIndex] = useState(0);
-  const [images, setImages] = useState();
+  const [images, setImages] = useState([]);
 
   const cacheImages = useRef({});
 
-  const handleSelect = (selectedIndex, e) => {
+  const handleSelect = (event, selectedIndex) => {
     setIndex(selectedIndex);
   };
 
-  const BootstrapButton = styled(Button)({
-    boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-    textTransform: "none",
-    fontSize: 16,
-    width: "150px",
-    height: "50px",
-    padding: "6px 12px",
-    border: "1px solid",
-    lineHeight: 1.5,
-    color: "black",
-    backgroundColor: "#ffd500",
-    borderColor: "grey",
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
-    "&:hover": {
-      backgroundColor: "grey",
-      borderColor: "#ffd500",
-      color: "white",
-      boxShadow: "none",
-    },
-    "&:active": {
-      boxShadow: "none",
-      backgroundColor: "#0062cc",
-      borderColor: "#005cbf",
-    },
-    "&:focus": {
-      boxShadow: "0 0 0 0.2rem rgba(0,123,255,.5)",
-    },
-  });
-
-  const itemId = element.zpid;
-  const options = {
-    method: "GET",
-    url: "https://zillow-com1.p.rapidapi.com/images",
-    params: { zpid: `${itemId}` },
-    headers: {
-      "X-RapidAPI-Key": "da86316bdcmsh9b607f3eb67c004p10dbbfjsnd18353baa41d",
-      "X-RapidAPI-Host": "zillow-com1.p.rapidapi.com",
-      "Content-Type": "application/json",
-    },
-  };
-
   useEffect(() => {
-    if (cacheImages.current[itemId]) {
-      console.log("useg from cache");
-      setImages(cacheImages.current[itemId]);
-    } else {
-      axios
-        .request(options)
-        .then(function (response) {
-          console.log("useg from request");
-          setImages(response.data.images);
-          cacheImages.current[itemId] = response.data.images;
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
+    if (items.length > 0) {
+      const itemId = items[index].zpid;
+      if (cacheImages.current[itemId]) {
+        console.log("using from cache");
+        setImages(cacheImages.current[itemId]);
+      } else {
+        const options = {
+          method: "GET",
+          url: "https://zillow-com1.p.rapidapi.com/images",
+          params: { zpid: `${itemId}` },
+          headers: {
+            "X-RapidAPI-Key":
+              "da86316bdcmsh9b607f3eb67c004p10dbbfjsnd18353baa41d",
+            "X-RapidAPI-Host": "zillow-com1.p.rapidapi.com",
+            "Content-Type": "application/json",
+          },
+        };
+
+        axios
+          .request(options)
+          .then(function (response) {
+            console.log("using from request");
+            setImages(response.data.images);
+            cacheImages.current[itemId] = response.data.images;
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
+      }
     }
-  }, [images, element, itemId, options]);
+  }, [index, items]);
 
   return (
     <>
-      {element && images && (
+      {items && images && (
         <>
           <section className="slider">
             <div
@@ -100,7 +63,7 @@ export default function CustomSlider({ element }) {
               }}
             >
               <p className="slider-header__title">
-                {element.streetAddress} , {element.resoFacts.cityRegion}
+                {items.streetAddress} , {element.resoFacts.cityRegion}
               </p>
             </div>
             <Slider
@@ -132,13 +95,13 @@ export default function CustomSlider({ element }) {
               }}
             >
               <Link style={{ textDecoration: "none" }} to={"/mapPage"}>
-                <BootstrapButton
+                <PriceButton
                   variant="contained"
                   className="button"
                   style={{ fontWeight: "800" }}
                 >
                   {element.price} CAD
-                </BootstrapButton>
+                </PriceButton>
               </Link>
             </div>
             <section>

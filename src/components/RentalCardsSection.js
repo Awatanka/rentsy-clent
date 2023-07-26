@@ -1,14 +1,19 @@
 import React from "react";
 import RentalCardsSubSection from "./RentalCardsSubSection";
-import apartmentList from "../data/propertyList.json";
 
-export default function RentalCardsData() {
-  const apartmentListFirst = apartmentList.slice(3, 7);
-  const apartmentListSecond = apartmentList.slice(8, 12);
-  const houseList = apartmentList
-    .filter((item) => item.propertyType === "SINGLE_FAMILY")
-    .slice(14, 18);
-
+export default function RentalCardsData({ items }) {
+  const apartmentListFirst = items
+    .filter((item) => item.propertyType === "APARTMENT")
+    .slice(0, 4);
+  const apartmentListSecond =
+    items &&
+    items
+      .filter((item) => item.propertyType === "TOWNHOUSE" || "APARTMENT")
+      .slice(0, 5);
+  const houseList =
+    items &&
+    items.filter((item) => item.propertyType === "SINGLE_FAMILY").slice(0, 9);
+  console.log(items);
   const sections = [
     {
       title: "Latest in Vancouver",

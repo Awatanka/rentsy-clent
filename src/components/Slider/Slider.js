@@ -6,7 +6,7 @@ import { styled } from "@mui/material/styles";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
-function Slider({ element }) {
+function Slider({ items }) {
   const [index, setIndex] = useState(0);
   const [images, setImages] = useState();
 
@@ -56,7 +56,7 @@ function Slider({ element }) {
     },
   });
 
-  const itemId = element.zpid;
+  const itemId = items.zpid;
   const options = {
     method: "GET",
     url: "https://zillow-com1.p.rapidapi.com/images",
@@ -84,11 +84,13 @@ function Slider({ element }) {
           console.error(error);
         });
     }
-  }, [images, element]);
+  }, [images, items]);
+
+  console.log("response" + items);
 
   return (
     <>
-      {element && images && (
+      {items && images && (
         <>
           <section className="slider">
             <div
@@ -100,7 +102,7 @@ function Slider({ element }) {
               }}
             >
               <p className="slider-header__title">
-                {element.streetAddress} , {element.resoFacts.cityRegion}
+                {items.streetAddress} , {items.resoFacts.cityRegion}
               </p>
             </div>
 
@@ -126,7 +128,7 @@ function Slider({ element }) {
                   className="button"
                   style={{ fontWeight: "800" }}
                 >
-                  {element.price} CAD
+                  {items.price} CAD
                 </BootstrapButton>
               </Link>
             </div>
@@ -136,17 +138,17 @@ function Slider({ element }) {
               </h3>
 
               <p style={{ fontSize: 18 }}>
-                Living area: {element.livingArea} {element.livingAreaUnits}
+                Living area: {items.livingArea} {items.livingAreaUnits}
               </p>
-              <p> Description: {element.description}</p>
-              {element.resoFacts.atAGlanceFacts
+              <p> Description: {items.description}</p>
+              {items.resoFacts.atAGlanceFacts
                 .filter((fact) => fact.factValue)
                 .map((fact) => (
                   <p>
                     {fact.factLabel}: {fact.factValue}
                   </p>
                 ))}
-              <p>Date posted: {element.datePosted}</p>
+              <p>Date posted: {items.datePosted}</p>
             </section>
           </section>
         </>

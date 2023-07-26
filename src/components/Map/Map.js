@@ -35,17 +35,15 @@ export default function Map({ items }) {
 
   const handleItems = (map, maps) => {
     items.map((item) => {
-      var place = new maps.Marker({
+      const place = new maps.Marker({
         position: {
           lat: item.latitude,
           lng: item.longitude,
         },
-        // label: item.address,
       });
 
       const InfoWindowContent = (
         <>
-          {" "}
           <div id="bodyContent">
             <h5>{item.propertyType}</h5>
             <h6>
@@ -112,7 +110,7 @@ export default function Map({ items }) {
   const handleCrimes = (map, maps) => {
     setCrimes(
       crimesJson.map((crime) => {
-        var crimePlace = new maps.Marker({
+        const crimePlace = new maps.Marker({
           key: crime.Latitude,
           position: {
             lat: crime.Latitude,
@@ -152,7 +150,7 @@ export default function Map({ items }) {
           lng: school.fields.geom.coordinates[0],
         };
 
-        var schoolPlace = new maps.Marker({
+        const schoolPlace = new maps.Marker({
           key: schoolCoords.lat,
           position: {
             lat: schoolCoords.lat,
