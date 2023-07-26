@@ -63,7 +63,7 @@ export default function CustomSlider({ items }) {
               }}
             >
               <p className="slider-header__title">
-                {items.streetAddress} , {element.resoFacts.cityRegion}
+                {items.streetAddress} , {items.resoFacts.cityRegion}
               </p>
             </div>
             <Slider

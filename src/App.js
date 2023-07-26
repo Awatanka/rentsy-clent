@@ -22,7 +22,7 @@ function App() {
         status_type: "ForRent",
       },
       headers: {
-        "X-RapidAPI-Key": "da86316bdcmsh9b607f3eb67c004p10dbbfjsnd18353baa41d",
+        "X-RapidAPI-Key": `${process.env.REACT_APP_ZILLOW_API_KEY}`,
         "X-RapidAPI-Host": "zillow-com1.p.rapidapi.com",
       },
     };

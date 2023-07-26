@@ -118,6 +118,25 @@ function Header() {
                 Contact Us
               </MenuItem>
             </Link>
+            <Link
+              to={"/fAVOURITE"}
+              className="header-link"
+              style={{ textDecoration: "none" }}
+            >
+              <MenuItem
+                sx={{
+                  my: 2,
+                  color: "#3f3e3e",
+                  display: "flex",
+                  alignItems: "center",
+                  textDecoration: "none",
+                  fontWeight: "600",
+                }}
+              >
+                <ContactsIcon sx={{ mr: 1 }} />
+                Contact Us
+              </MenuItem>
+            </Link>
           </Box>
 
           <Box sx={{ flexGrow: 1 }} />
