@@ -7,7 +7,7 @@ import { useState } from "react";
 import PetsIcon from "@mui/icons-material/Pets";
 import PrivacyTipIcon from "@mui/icons-material/PrivacyTip";
 import SchoolIcon from "@mui/icons-material/School";
-import Filter from "../Filter/Filter";
+import Filter from "../Filter";
 import "./map.scss";
 import * as ReactDOMServer from "react-dom/server";
 
@@ -169,12 +169,12 @@ export default function Map({ items }) {
     );
   };
 
-  const CustomButton = ({ label, icon, onClick }) => (
+  const CustomButtonMap = ({ label, icon, onClick }) => (
     <button
       onClick={onClick}
       style={{
-        fontSize: "1rem",
-        width: "11rem",
+        fontSize: "14px",
+        width: "9rem",
         height: "3.125rem",
         padding: "6px 12px",
         border: "1px solid",
@@ -204,9 +204,8 @@ export default function Map({ items }) {
       <div
         style={{
           display: "flex",
-          padding: "1rem",
+          padding: "20px",
           flexDirection: "row",
-          justifyContent: "space-evenly",
           alignItems: "center",
         }}
       >
@@ -214,12 +213,10 @@ export default function Map({ items }) {
         <div
           style={{
             display: "flex",
-            flexDirection: "row",
-            justifyContent: "flex-end",
             alignItems: "center",
           }}
         >
-          <CustomButton
+          <CustomButtonMap
             label="Dog off-leash"
             icon={<PetsIcon />}
             onClick={() => {
@@ -227,7 +224,7 @@ export default function Map({ items }) {
               hideDogParks();
             }}
           />
-          <CustomButton
+          <CustomButtonMap
             label="Crimes"
             icon={<PrivacyTipIcon />}
             onClick={() => {
@@ -235,7 +232,7 @@ export default function Map({ items }) {
               hideCrimes();
             }}
           />
-          <CustomButton
+          <CustomButtonMap
             label="Schools"
             icon={<SchoolIcon />}
             onClick={() => {

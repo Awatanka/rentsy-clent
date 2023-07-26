@@ -18,6 +18,7 @@ import Typography from "@mui/material/Typography";
 import Logo from "../assets/images/Logo.png";
 import AvatarIcon from "../assets/images/4.jpg";
 import MenuIcon from "@mui/icons-material/Menu";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 const settings = ["Profile", "Account"];
 
@@ -119,7 +120,7 @@ function Header() {
               </MenuItem>
             </Link>
             <Link
-              to={"/fAVOURITE"}
+              to={"/favourite"}
               className="header-link"
               style={{ textDecoration: "none" }}
             >
@@ -133,8 +134,8 @@ function Header() {
                   fontWeight: "600",
                 }}
               >
-                <ContactsIcon sx={{ mr: 1 }} />
-                Contact Us
+                <FavoriteBorderIcon sx={{ mr: 1 }} />
+                Favourite
               </MenuItem>
             </Link>
           </Box>

@@ -22,7 +22,7 @@ function App() {
         status_type: "ForRent",
       },
       headers: {
-        "X-RapidAPI-Key": `${process.env.REACT_APP_ZILLOW_API_KEY}`,
+        "X-RapidAPI-Key": `${process.env.REACT_APP_RAPIDAPI_KEY}`,
         "X-RapidAPI-Host": "zillow-com1.p.rapidapi.com",
       },
     };
@@ -30,7 +30,6 @@ function App() {
     try {
       const response = await axios.request(options);
       setItems(response.data.props);
-      console.log(response);
     } catch (error) {
       console.error(error);
     }
@@ -40,8 +39,6 @@ function App() {
     fetchItems();
   }, []);
 
-  console.log("app" + items);
-
   return (
     <>
       <BrowserRouter>
@@ -49,9 +46,7 @@ function App() {
         <Routes>
           <Route path="/rent" element={<HomePage items={items} />} />
           <Route path="/" element={<HomePage items={items} />} />
-          {/* <Route path="/card" element={<CardDetails items={items} />} /> */}
-          {/* <Route path="/rent/:cardId" element={<CardDetails items={items} />} /> */}
-          {/* <Route path="/Profile" element={<Profile />} /> */}
+          <Route path="/card/:cardId" element={<CardDetails items={items} />} />
           <Route path="/account" element={<Account />} />
           <Route path="/editProfile" element={<EditProfile />} />
           <Route path="/mapPage" element={<MapPage items={items} />} />

@@ -11,14 +11,11 @@ export default function CardListAside() {
 
   useEffect(() => {
     setItems(data);
-    console.log(data);
   }, []);
 
   return (
     <>
       <aside className="cardList">
-        <h3 className="cardList-header"> </h3>
-
         {items.map((item) => (
           <div className="cardList-card" key={item.id}>
             <Link
