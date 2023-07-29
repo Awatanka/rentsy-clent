@@ -108,7 +108,10 @@ function normalizeAddress(address) {
   return condensedAddress;
 }
 
-export default function CustomCard({ items }) {
+export default function CustomCardList({ items, overflowX }) {
+  // const cardListStyle = {
+  //   overflowX: overflowX === "scroll" ? "scroll" : "hidden",
+  // };
   return (
     <Grid container spacing={2}>
       {items

@@ -54,9 +54,9 @@ const VideoHero = () => {
   return (
     <section>
       <div className="videoContainer">
-        <video autoPlay loop muted id="video">
+        <video autoPlay loop muted id="video" loading="lazy">
           <source src={Van} type="video/mp4" />
-        </video>{" "}
+        </video>
       </div>
 
       <Box

@@ -2,9 +2,14 @@ import React from "react";
 import ReadMoreIcon from "@mui/icons-material/ReadMore";
 import { Link } from "react-router-dom";
 import { Typography, Grid, Box } from "@mui/material";
-import CustomCard from "./CustomCard";
+import CustomCardList from "./CustomCardList";
 
-export default function RentalCardsSection({ title, description, items }) {
+export default function RentalCardsSubSection({
+  title,
+  description,
+  items,
+  overflowX,
+}) {
   return (
     <Box sx={{ margin: "40px 0" }}>
       {items && (
@@ -33,7 +38,8 @@ export default function RentalCardsSection({ title, description, items }) {
               </Link>
             </Grid>
           </Grid>
-          <CustomCard items={items} />
+
+          <CustomCardList items={items} overflowX={overflowX} />
         </>
       )}
     </Box>

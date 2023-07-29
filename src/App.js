@@ -9,6 +9,7 @@ import MapPage from "./pages/MapPage";
 import Map from "./components/Map/Map";
 import Favorite from "./pages/Favourite/Favourite";
 import axios from "axios";
+import UnderConstruction from "./components/UnderConstruction";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -51,7 +52,9 @@ function App() {
           <Route path="/editProfile" element={<EditProfile />} />
           <Route path="/mapPage" element={<MapPage items={items} />} />
           <Route path="/favourite" element={<Favorite items={items} />} />
+          <Route path="/contact" element={<UnderConstruction />} />
           <Route path="/map" element={<Map />} />
+          <Route path="/guide" element={<UnderConstruction />} />
         </Routes>
       </BrowserRouter>
     </>

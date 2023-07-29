@@ -9,11 +9,11 @@ export default function RentalCardsData({ items }) {
     items &&
     items
       .filter((item) => item.propertyType === "TOWNHOUSE" || "APARTMENT")
-      .slice(0, 5);
+      .slice(0, 9);
   const houseList =
     items &&
     items.filter((item) => item.propertyType === "SINGLE_FAMILY").slice(0, 9);
-  console.log(items);
+  // console.log(items);
   const sections = [
     {
       title: "Latest in Vancouver",
@@ -37,12 +37,13 @@ export default function RentalCardsData({ items }) {
 
   return (
     <>
-      {sections.map((section) => (
+      {sections.map((section, index) => (
         <RentalCardsSubSection
           key={section.title}
           title={section.title}
           description={section.description}
           items={section.items}
+          overflowX={index === 1 ? "scroll" : "hidden"}
         />
       ))}
     </>
